@@ -101,6 +101,8 @@ glapi_libs := libglapi.so.0
 libs += $(glapi_libs)
 drm_libs := $(shell cd $(LOCAL_PATH)/prebuilts/$(TARGET_ARCH)/lib && find * -name 'libdrm*.so.*' -type l)
 libs += $(drm_libs)
+x264_libs := libx264.so.164
+libs += $(x264_libs)
 $(foreach lib,$(libs),\
     $(eval $(call define-redroid-prebuilt-lib,$(lib),$(lib))))
 
@@ -139,6 +141,11 @@ $(foreach lib,$(vulkan_libs),\
 
 # minigbm gralloc
 $(eval $(call define-redroid-prebuilt-lib,gralloc.cros,,hw/gralloc.cros.so,hw))
+
+
+## libmedia_codec
+$(eval $(call define-redroid-prebuilt-lib,libmedia_codec,,libmedia_codec.so, , ,$(va_libs) $(ffmpeg_libs) $(x264_libs)))
+
 
 # $(1): module name (and file name)
 # $(2): depended modules
