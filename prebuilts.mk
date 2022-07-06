@@ -5,6 +5,7 @@ PRODUCT_PACKAGES += \
     vulkan.radeon \
     vulkan.virtio \
     gralloc.cros \
+    gralloc.gbm \
     vainfo \
     ffmpeg \
     ffprobe \

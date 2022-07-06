@@ -96,9 +96,9 @@ $(eval $(call define-redroid-prebuilt-lib,libgallium_drv_video,,dri/libgallium_d
 
 
 # libs with SOVERSION
-libs := libgbm.so.1 
+gbm_libs := libgbm.so.1
 glapi_libs := libglapi.so.0
-libs += $(glapi_libs)
+libs = $(gbm_libs) $(glapi_libs)
 drm_libs := $(shell cd $(LOCAL_PATH)/prebuilts/$(TARGET_ARCH)/lib && find * -name 'libdrm*.so.*' -type l)
 libs += $(drm_libs)
 x264_libs := libx264.so.164
@@ -141,6 +141,10 @@ $(foreach lib,$(vulkan_libs),\
 
 # minigbm gralloc
 $(eval $(call define-redroid-prebuilt-lib,gralloc.cros,,hw/gralloc.cros.so,hw))
+
+
+# gbm gralloc
+$(eval $(call define-redroid-prebuilt-lib,gralloc.gbm,,hw/gralloc.gbm.so,hw,,$(gbm_libs)))
 
 
 ## libmedia_codec
