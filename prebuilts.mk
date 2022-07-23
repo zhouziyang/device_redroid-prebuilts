@@ -1,4 +1,5 @@
 PRODUCT_PACKAGES += \
+    amdgpu.ids.redroid \
     libEGL_mesa \
     libGLESv1_CM_mesa \
     libGLESv2_mesa \
@@ -9,7 +10,3 @@ PRODUCT_PACKAGES += \
     vainfo \
     ffmpeg \
     ffprobe \
-
-# from AOSP
-PRODUCT_PACKAGES += \
-    amdgpu.ids \

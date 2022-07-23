@@ -92,7 +92,7 @@ $(eval $(call define-redroid-prebuilt-lib,libgallium_drv_video,,dri/libgallium_d
 
 
 ## amdgpu.ids
-#$(eval $(call define-redroid-prebuilt-etc,amdgpu.ids_p,amdgpu.ids,amdgpu.ids,hwdata))
+$(eval $(call define-redroid-prebuilt-etc,amdgpu.ids.redroid,,libdrm/amdgpu.ids,hwdata))
 
 
 # libs with SOVERSION
