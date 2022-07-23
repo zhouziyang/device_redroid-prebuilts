@@ -167,10 +167,12 @@ LOCAL_REQUIRED_MODULES := $2
 include $$(BUILD_PREBUILT)
 endef
 
-# vainfo
-$(eval $(call define-redroid-prebuilt-bin,vainfo,$(va_libs)))
+# vaapi
+bins:=avcenc h264encode hevcencode jpegenc vp8enc vp9enc vainfo
+$(foreach i,$(bins),\
+    $(eval $(call define-redroid-prebuilt-bin,$(i),$(va_libs))))
 
-bins := ffmpeg ffprobe
+# ffmpeg
+bins:=ffmpeg ffprobe
 $(foreach i,$(bins),\
     $(eval $(call define-redroid-prebuilt-bin,$(i),$(ffmpeg_libs))))
-

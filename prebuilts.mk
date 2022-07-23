@@ -7,6 +7,9 @@ PRODUCT_PACKAGES += \
     vulkan.virtio \
     gralloc.cros \
     gralloc.gbm \
-    vainfo \
     ffmpeg \
     ffprobe \
+
+
+# vaapi
+PRODUCT_PACKAGES += avcenc h264encode hevcencode jpegenc vp8enc vp9enc vainfo
