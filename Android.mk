@@ -152,6 +152,12 @@ $(eval $(call define-redroid-prebuilt-lib,gralloc.gbm,,hw/gralloc.gbm.so,hw,,$(g
 $(eval $(call define-redroid-prebuilt-lib,libOmxCore,,libOmxCore.so, , ,$(va_libs) $(ffmpeg_libs) $(x264_libs)))
 
 
+## libevdev
+evdev_libs := libevdev.so.2
+$(foreach lib,$(evdev_libs),\
+    $(eval $(call define-redroid-prebuilt-lib,$(lib),$(lib))))
+
+
 # $(1): module name (and file name)
 # $(2): depended modules
 define define-redroid-prebuilt-bin
