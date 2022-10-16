@@ -12,6 +12,7 @@ PRODUCT_PACKAGES += \
     ffprobe \
     uinputd \
     vncserver \
+    hwcomposer.redroid \
 
 
 # vaapi

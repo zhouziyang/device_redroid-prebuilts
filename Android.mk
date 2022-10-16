@@ -148,6 +148,10 @@ $(eval $(call define-redroid-prebuilt-lib,gralloc.cros,,hw/gralloc.cros.so,hw))
 $(eval $(call define-redroid-prebuilt-lib,gralloc.gbm,,hw/gralloc.gbm.so,hw,,$(gbm_libs)))
 
 
+# redroid hwcomposer
+$(eval $(call define-redroid-prebuilt-lib,hwcomposer.redroid,,hw/hwcomposer.redroid.so,hw))
+
+
 ## libOmxCore
 $(eval $(call define-redroid-prebuilt-lib,libOmxCore,,libOmxCore.so, , ,$(va_libs) $(ffmpeg_libs) $(x264_libs)))
 
