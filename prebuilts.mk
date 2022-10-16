@@ -11,6 +11,7 @@ PRODUCT_PACKAGES += \
     ffmpeg \
     ffprobe \
     uinputd \
+    vncserver \
 
 
 # vaapi

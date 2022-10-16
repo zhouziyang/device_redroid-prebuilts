@@ -193,3 +193,5 @@ $(foreach i,$(bins),\
     $(eval $(call define-redroid-prebuilt-bin,$(i),$(ffmpeg_libs))))
 
 $(eval $(call define-redroid-prebuilt-bin,uinputd,$(evdev_libs),uinputd/uinputd.rc))
+
+$(eval $(call define-redroid-prebuilt-bin,vncserver,$(vncserver_libs),vncserver/vncserver.rc))
