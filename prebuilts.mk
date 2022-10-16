@@ -5,6 +5,7 @@ PRODUCT_PACKAGES += \
     libGLESv2_mesa \
     vulkan.radeon \
     vulkan.virtio \
+    vulkan.lvp \
     gralloc.cros \
     gralloc.gbm \
     ffmpeg \
