@@ -158,6 +158,10 @@ $(foreach lib,$(evdev_libs),\
     $(eval $(call define-redroid-prebuilt-lib,$(lib),$(lib))))
 
 
+## libvncserver
+vncserver_libs := libvncserver
+$(eval $(call define-redroid-prebuilt-lib,$(vncserver_libs),,$(vncserver_libs).so))
+
 # $(1): module name (and file name)
 # $(2): depended modules
 # $(3): init.rc
