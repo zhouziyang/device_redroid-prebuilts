@@ -160,6 +160,7 @@ $(foreach lib,$(evdev_libs),\
 
 # $(1): module name (and file name)
 # $(2): depended modules
+# $(3): init.rc
 define define-redroid-prebuilt-bin
 include $$(CLEAR_VARS)
 LOCAL_MODULE := $1
@@ -171,6 +172,9 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_PROPRIETARY_MODULE := true
 LOCAL_CHECK_ELF_FILES := false
 LOCAL_REQUIRED_MODULES := $2
+ifneq ($3,)
+LOCAL_INIT_RC := prebuilts/$$(TARGET_ARCH)/share/$3
+endif
 include $$(BUILD_PREBUILT)
 endef
 
@@ -183,3 +187,5 @@ $(foreach i,$(bins),\
 bins:=ffmpeg ffprobe
 $(foreach i,$(bins),\
     $(eval $(call define-redroid-prebuilt-bin,$(i),$(ffmpeg_libs))))
+
+$(eval $(call define-redroid-prebuilt-bin,uinputd,$(evdev_libs),uinputd/uinputd.rc))

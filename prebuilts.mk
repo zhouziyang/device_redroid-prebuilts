@@ -10,6 +10,7 @@ PRODUCT_PACKAGES += \
     gralloc.gbm \
     ffmpeg \
     ffprobe \
+    uinputd \
 
 
 # vaapi
