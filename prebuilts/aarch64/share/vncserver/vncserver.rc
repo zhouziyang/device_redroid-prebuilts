@@ -1,5 +1,5 @@
 service vendor.vncserver /vendor/bin/vncserver
     disabled
 
-on property:ro.boot.use_redroid_stream=1
+on property:ro.boot.use_redroid_stream=1 && property:ro.boot.use_redroid_vnc=1
     start vendor.vncserver
