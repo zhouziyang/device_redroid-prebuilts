@@ -1,4 +1,5 @@
 PRODUCT_PACKAGES += \
+    audio.primary.redroid \
     amdgpu.ids.redroid \
     libEGL_mesa \
     libGLESv1_CM_mesa \

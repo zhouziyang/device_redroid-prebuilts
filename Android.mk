@@ -148,6 +148,10 @@ $(eval $(call define-redroid-prebuilt-lib,gralloc.cros,,hw/gralloc.cros.so,hw))
 $(eval $(call define-redroid-prebuilt-lib,gralloc.gbm,,hw/gralloc.gbm.so,hw,,$(gbm_libs)))
 
 
+# redroid audio
+$(eval $(call define-redroid-prebuilt-lib,audio.primary.redroid,,hw/audio.primary.redroid.so,hw))
+
+
 # redroid hwcomposer
 $(eval $(call define-redroid-prebuilt-lib,hwcomposer.redroid,,hw/hwcomposer.redroid.so,hw))
 
