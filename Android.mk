@@ -68,8 +68,7 @@ endef
 
 # NDK libs
 ndk_libs_cxx := libc++_shared
-ndk_libs_media := libcamera2ndk libandroid libmediandk
-libs := $(ndk_libs_cxx) $(ndk_libs_media)
+libs := $(ndk_libs_cxx)
 $(foreach lib,$(libs),\
     $(eval $(call define-redroid-prebuilt-lib,$(lib)_p,$(lib).so,$(lib).so)))
 
@@ -102,8 +101,6 @@ expat_libs := libexpat.so.1
 libs = $(gbm_libs) $(glapi_libs) $(expat_libs)
 drm_libs := $(shell cd $(LOCAL_PATH)/prebuilts/$(TARGET_ARCH)/lib && find * -name 'libdrm*.so.*' -type l)
 libs += $(drm_libs)
-x264_libs := libx264.so.164
-libs += $(x264_libs)
 $(foreach lib,$(libs),\
     $(eval $(call define-redroid-prebuilt-lib,$(lib),$(lib))))
 
@@ -157,7 +154,7 @@ $(eval $(call define-redroid-prebuilt-lib,hwcomposer.redroid,,hw/hwcomposer.redr
 
 
 ## libOmxCore
-$(eval $(call define-redroid-prebuilt-lib,libOmxCore,,libOmxCore.so, , ,$(va_libs) $(ffmpeg_libs) $(x264_libs)))
+$(eval $(call define-redroid-prebuilt-lib,libOmxCore,,libOmxCore.so, , ,$(va_libs) ))
 
 
 ## libevdev
@@ -194,11 +191,6 @@ endef
 bins:=avcenc h264encode hevcencode jpegenc vp8enc vp9enc vainfo
 $(foreach i,$(bins),\
     $(eval $(call define-redroid-prebuilt-bin,$(i),$(va_libs))))
-
-# ffmpeg
-bins:=ffmpeg ffprobe
-$(foreach i,$(bins),\
-    $(eval $(call define-redroid-prebuilt-bin,$(i),$(ffmpeg_libs))))
 
 $(eval $(call define-redroid-prebuilt-bin,uinputd,$(evdev_libs),uinputd/uinputd.rc))
 
