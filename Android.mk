@@ -97,8 +97,7 @@ $(eval $(call define-redroid-prebuilt-etc,amdgpu.ids.redroid,,libdrm/amdgpu.ids,
 # libs with SOVERSION
 gbm_libs := libgbm.so.1
 glapi_libs := libglapi.so.0
-expat_libs := libexpat.so.1
-libs = $(gbm_libs) $(glapi_libs) $(expat_libs)
+libs = $(gbm_libs) $(glapi_libs)
 drm_libs := $(shell cd $(LOCAL_PATH)/prebuilts/$(TARGET_ARCH)/lib && find * -name 'libdrm*.so.*' -type l)
 libs += $(drm_libs)
 $(foreach lib,$(libs),\
@@ -128,7 +127,7 @@ $(foreach lib,$(ffmpeg_libs),\
 libs := libEGL_mesa libGLESv1_CM_mesa libGLESv2_mesa
 $(foreach lib,$(libs),\
     $(eval $(call define-redroid-prebuilt-lib,$(lib),,egl/$(lib).so,egl,,\
-		$(dri_libs) $(llvm_libs) $(glapi_libs) $(drm_libs) $(expat_libs))))
+		$(dri_libs) $(llvm_libs) $(glapi_libs) $(drm_libs))))
 
 
 # Vulkan
