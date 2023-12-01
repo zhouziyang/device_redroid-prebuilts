@@ -4,9 +4,12 @@ PRODUCT_PACKAGES += \
     libEGL_mesa \
     libGLESv1_CM_mesa \
     libGLESv2_mesa \
+    vulkan.broadcom \
+    vulkan.freedreno \
     vulkan.radeon \
     vulkan.virtio \
     vulkan.lvp \
+    vulkan.nouveau \
     gralloc.cros \
     gralloc.gbm \
     ffmpeg \
