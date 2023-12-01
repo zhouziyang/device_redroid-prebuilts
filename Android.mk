@@ -117,12 +117,6 @@ $(foreach lib,$(llvm_libs),\
     $(eval $(call define-redroid-prebuilt-lib,$(lib),,$(lib).so)))
 
 
-## FFMPEG
-ffmpeg_libs := libavcodec libavdevice libavfilter libavformat libavutil libpostproc libswresample libswscale
-$(foreach lib,$(ffmpeg_libs),\
-	$(eval $(call define-redroid-prebuilt-lib,$(lib),,$(lib).so,,,$(ndk_libs_media:%=%_p))))
-
-
 # GLES
 libs := libEGL_mesa libGLESv1_CM_mesa libGLESv2_mesa
 $(foreach lib,$(libs),\
