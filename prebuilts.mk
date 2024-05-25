@@ -1,5 +1,4 @@
 PRODUCT_PACKAGES += \
-    audio.primary.redroid \
     amdgpu.ids.redroid \
     libEGL_mesa \
     libGLESv1_CM_mesa \
@@ -12,8 +11,6 @@ PRODUCT_PACKAGES += \
     vulkan.nouveau \
     gralloc.cros \
     gralloc.gbm \
-    ffmpeg \
-    ffprobe \
     uinputd \
     vncserver \
     hwcomposer.redroid \
