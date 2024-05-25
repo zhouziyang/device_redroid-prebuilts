@@ -121,7 +121,7 @@ $(foreach lib,$(llvm_libs),\
 libs := libEGL_mesa libGLESv1_CM_mesa libGLESv2_mesa
 $(foreach lib,$(libs),\
     $(eval $(call define-redroid-prebuilt-lib,$(lib),,egl/$(lib).so,egl,,\
-		$(dri_libs) $(llvm_libs) $(glapi_libs) $(drm_libs))))
+		$(dri_libs) $(glapi_libs) $(drm_libs))))
 
 
 # Vulkan
